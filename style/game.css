@@ -1,0 +1,1030 @@
+/* MAIN */
+body{
+    margin: auto;
+    width: 1600px;
+    height: 930px;
+    background-color: black;
+}
+div.background{
+    position: relative;
+    margin: auto;
+    width: 1600px;
+    height: 930px;
+    background-image: url(img/background.png);
+    background-position-y: -36px;
+}
+div.header{
+    position: relative;
+    top: 0;
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 1600px;
+    height: 70px;
+    background-color: transparent;
+    color: rgb(179, 128, 63);
+}
+div.header > a{
+    display: inline-block;
+    box-sizing: border-box;
+    margin-left: 30px;
+    margin-top: 20px;
+    border: 2px outset rgb(179, 128, 63);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    padding: 6px;
+}
+div.game{
+    position: absolute;
+    top: 105px;
+    left: 150px;
+    border: 4px outset rgb(179, 128, 63);
+    border-radius: 10px;
+    width: 1300px;
+    height: 720px;
+    background-image: url(img/hallway.png);
+    background-size: cover;
+}
+div.room1{
+    position: absolute;
+    top: 105px;
+    left: 150px;
+    border: 4px outset rgb(179, 128, 63);
+    border-radius: 10px;
+    width: 1300px;
+    height: 720px;
+    background-image: url(img/room1.jpeg);
+    background-size: cover;
+}
+div.board{
+    position: absolute;
+    top: 105px;
+    left: 150px;
+    border: 4px outset rgb(179, 128, 63);
+    border-radius: 10px;
+    width: 1300px;
+    height: 720px;
+    background-image: url(img/board.jpg);
+    background-size: cover;
+}
+div.room2{
+    position: absolute;
+    top: 105px;
+    left: 150px;
+    border: 4px outset rgb(179, 128, 63);
+    border-radius: 10px;
+    width: 1300px;
+    height: 720px;
+    box-sizing: border-box;
+    background-image: url(img/room2.jpeg);
+    background-size: cover;
+
+}
+div.player{
+    position: relative;
+    z-index: 5;
+    transition: 3s transform ease-in-out, 0s background linear, 1s z-index linear, 3s opacity linear;
+    transition-delay: 0s, 0s, 4.5s, 0s;
+    transform: translate(700px, 100px);
+    width: 112px;
+    height: 160px;
+    background-image: url(img/player.png);
+    background-size: cover;
+}
+div.player:hover{
+    background-image: url(img/playerhallo.gif);
+}
+div#emagun{ 
+    background-image: url(img/playergun.png);
+    background-size: cover;
+}
+div#emagun:hover{
+    background-image: url(img/playergun1.gif);
+    background-size: cover;
+}
+.gameover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 1s opacity linear, 0s z-index linear;
+    z-index: -3;
+    opacity: 0;
+    width: 1300px;
+    height: 720px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgb(179, 128, 63);
+    text-align: center;
+    font-size: 48px;
+    padding: 40px;
+}
+div#gameoverboom{
+    transition-delay: 11s;
+}
+/* LABEL MENU,ROOM */
+label.menu{
+    position: absolute;
+    transform: translate(215px, -52px);
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 2px outset rgb(179, 128, 63);
+    border-radius: 16px;
+    width: 64px;
+    height: 30px;
+    padding: 4px;
+    color: rgb(179, 128, 63);
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+label.start{
+    z-index: -5;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 80px;
+}
+label.room{
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+    z-index: 1;
+    border: 0;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+label.room::before{
+    content: "";
+    position: absolute;
+    transition: 800ms;
+    transition-timing-function: cubic-bezier(0.4,-1.26, 0.25, 1.65);
+    box-sizing: border-box;
+    border: 3px dashed rgba(179, 128, 63, 0.7);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+}
+label.room::after{
+    content: "";
+    position: absolute;
+    transition: 800ms;
+    transition-timing-function: cubic-bezier(0.4,-1.26, 0.25, 1.65);
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgb(179, 128, 63) 0%, rgba(0,0,0,0) 42%, rgba(0,212,255,0) 100%);
+}
+label.room:hover::before {
+    transform: rotate(-60deg);
+}
+label.room:hover::after{
+    transform: scale(1.8);
+}
+label.table{
+    top: 460px;
+    left: 460px;
+}
+label.door1{
+    top: 360px;
+    left: 784px;
+}
+label.door2{
+    top: 512px;
+    left: 864px;
+}
+label.room1exit{
+    top: 33rem;
+    left: 15rem;
+}
+label.room1middle{
+    top: 38rem;
+    left: 37rem;
+}
+label.room1bed{
+    top: 32rem;
+    left: 54rem;
+    opacity: 0;
+    transition: 2s;
+}
+label.room2exit{
+    top: 370px;
+    left: 285px;
+}
+label.room2pc{
+    top: 600px;
+    left: 450px;
+}
+label.back{
+    top: 200px;
+    left: 830px;
+}
+label.good{
+    top: 200px;
+    left: 830px;
+    z-index: -5;
+}
+/* BUTTONS,BUTTONLINK */
+.button{
+    position: absolute;
+    display: block;
+    transition: 0s z-index ease-in-out, 2s opacity ease-in-out, 0.5s transform ease-in-out;
+    transition-delay: 0s, 1.5s, 0s;
+    z-index: -2;
+    opacity: 0;
+    border: 2px solid black;
+    border-radius: 16px;
+    background-color: rgba(143, 126, 50, 0.8);
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+.button:hover{
+    transform: scale(1.2);
+}
+a.door1{
+    top: 260px;
+    left: 880px;
+}
+a.door1gun{
+    top: 260px;
+    left: 880px;
+}
+a.door2{
+    top: 410px;
+    left: 950px;
+}
+a.board{
+    left: 320px;
+    top: 374px;
+}
+a#zpet{
+    position: absolute;
+    left: 48px;
+    top: 48px;
+    z-index: 1;
+    opacity: 1;
+}
+a.room1{
+    top: 400px;
+    left: 160px;
+}
+a.room2{
+    top: 270px;
+    left: 140px;
+}
+a.room1koule{
+    top: 400px;
+    left: 160px;
+}
+label.ending{
+    top: 100px;
+    left: 720px;
+    transition: 0s z-index ease-in-out, 2s opacity ease-in-out, 0.5s transform ease-in-out;
+    transition-delay: 0s, 6s, 0s;
+}
+label.gun{
+    top: 336px;
+    left: 320px;
+}
+label.shot{
+    top: 480px;
+    left: 680px;
+}
+label.keys{
+    top: 370px;
+    left: 950px;
+}
+label.keys1{
+    left: 350px;
+    top: 400px;
+    transition: 0s z-index ease-in-out, 2s opacity ease-in-out, 0.5s transform ease-in-out;
+    transition-delay: 0s, 4s, 0s;
+}
+label.utec{
+    top: 520px;
+    left: 680px;
+}
+label.koule{
+    top: 480px;
+    left: 420px;
+}
+label.end{
+    top: 520px;
+    left: 420px;
+}
+label.win{
+    top: 100px;
+    left: 920px;
+}
+/* PARAGRAF */
+p.intro{
+    position: absolute;
+    display: block;
+    transition: 0s z-index ease-in-out, 2s opacity ease-in-out;
+    transition-delay: 0s, 1.5s;
+    z-index: -2;
+    opacity: 0;
+    border: 2px solid black;
+    border-radius: 16px;
+    width: 192px;
+    height: auto;
+    background-color: rgba(143, 126, 50, 0.8);
+    padding: 10px;
+    font-weight: bold;
+}
+p.intro::after{
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    clip-path: polygon(0 0, 100% 0, 75% 29%, 69% 65%, 100% 100%, 40% 88%, 13% 59%);
+    background-color: black;
+}
+p.introom1{
+    top: 200px;
+}
+p.introom2{
+    top: 120px;
+    left: 120px;
+}
+p.start{
+    top: 80px;
+    left: 528px;
+    transition: 1s opacity ease-in-out;
+}
+p.table{
+    top: 208px;
+    left: 320px;
+}
+p.door2{
+    top: 280px;
+    left: 720px;
+}
+p.badguy{
+    top: 380px;
+    left: 450px;
+}
+p.haha{
+    top: 250px;
+    left: 750px;
+}
+p.boli{
+    top: 200px;
+    left: 830px;
+    transition: 0s z-index ease-in-out, 2s opacity ease-in-out;
+    transition-delay: 0s, 4s;
+}
+p.pc{
+    top: 400px;
+    left: 300px;
+}
+p.chyba{
+    top: 0px;
+    left: 650px;
+    transition: 3s z-index cubic-bezier(0,-1.97, 0.8, 1.1);
+    z-index: -1;
+    transition-delay: 3s;
+}
+p.pc1{
+    top: 370px;
+    left: 300px;
+    transition: 12s z-index cubic-bezier(0,-1.97, 0.8, 1.1);
+}
+p.win{
+    top: 0px;
+    left: 900px;
+}
+p.win1{
+    top: 0px;
+    left: 650px;
+    transition-delay: 5s;
+}
+/* ITEM IMAGE */
+img#gun{
+    position: absolute;
+    left: 352px;
+    top: 368px;
+    transform: rotate(-55deg);
+    width: 128px;
+    height: auto;
+}
+img#bars{
+    position: absolute;
+    left: 710px;
+    top: 126px;
+    transition: 300ms top ease-in, 0s opacity ease;
+    z-index: -1;
+    opacity: 1;
+    width: 60px;
+    height: 140px;
+}
+img.carpet{
+    position: relative;
+    left: 555px;
+    top: 138px;
+    z-index: 1;
+    width: 80px;
+    height: 20px;
+}
+img.keys{
+    position: relative;
+    opacity: 0;
+    transition: 2s transform linear, 1s opacity linear, 0s left linear, 0s top linear;
+    transition-delay: 1s, 4s, 0s, 0s;
+    left: 854px;
+    top: -50px;
+    transform: rotate(0deg);
+    width: 4rem;
+    height: auto;
+}
+img#gunfire{
+    position: absolute;
+    transition: 0s opacity linear,0s z-index linear;
+    transition-delay: 0s, 1.5s;
+    width: 50px;
+    height: auto;
+    left: 680px;
+    top: 567px;
+    z-index: 5;
+    opacity: 0;
+}
+img#bloodunder{
+    position: absolute;
+    left: 960px;
+    top: 500px;
+    transform: rotate(32deg);
+    opacity: 0;
+    transition: 2s opacity linear;
+    transition-delay: 4s;
+    width: 200px;
+    height: auto;
+}
+img#stain1{
+    position: absolute;
+    left: 860px;
+    top: 280px;
+    opacity: 0;
+    transition: 1s opacity linear;
+    transition-delay: 0.5s;
+    width: 72px;
+    height: auto;
+}
+img#stain2{
+    position: absolute;
+    left: 1135px;
+    top: 325px;
+    opacity: 0;
+    transition: 1s opacity linear;
+    transition-delay: 0.5s;
+    transform: rotate(32deg);
+    width: 180px;
+    height: auto;
+}
+img.boom{
+    position: absolute;
+    transition: 0s opacity linear;
+}
+img#b1{
+    left: 950px;
+    top: -300px;
+}
+img#b2{
+    left: 800px;
+    top: -300p
+}
+img#b3{
+    left: 600px;
+    top: -300px;
+}
+img#b4{
+    left: 900px;
+    top: -100px;
+}
+img#b5{
+    left: 750px;
+    top: -100px;
+}
+img#b6{
+    left: 600px;
+    top: -100px;
+}
+img#b7{
+    left: 400px;
+    top: -200px;
+}
+img#b8{
+    left: 850px;
+    top: 0px;
+}
+img#b9{
+    left: 450px;
+    top: 0px;
+}
+img#bgnew{
+    position: absolute;
+    opacity: 0;
+    transition: 2s;
+    transition-delay: 9.2s;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+/* ITEM DIV */
+div.badguy{
+    position: relative;
+    left: 955px;
+    top: 10px;
+    z-index: 1;
+    transition: 3s top linear, 3s left linear, 0s background linear, 3s transform cubic-bezier(0.2,-0.42, 0.66, 1.39), 0s width linear,  0s height linear;
+    transition-delay: 1s, 1s, 3s, 1s, 4s, 4s;
+    width: 80px;
+    height: 240px;
+    background: url(img/badguy.png);
+    background-size: cover;
+}
+div.bullet{
+    position: relative;
+    display: inline-block;
+    transform: translate(638px, 132px);
+    transition: 0.5s;
+    transition-delay: 0s;
+    transition-timing-function: linear;
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 0.1rem solid darkred;
+    border-radius: 50%;
+    background-color: red;
+    z-index: 1;
+}
+div.b1{transition-delay: 0.1s;}
+div.b2{transition-delay: 0.2s;}
+div.b3{transition-delay: 0.3s;}
+div.b4{transition-delay: 0.4s;}
+div.b5{transition-delay: 0.5s;}
+div.b6{transition-delay: 0.6s;}
+div.tatka{
+    position: relative;
+    background: url(img/tatka.gif);
+    background-size: cover;
+    width: 180px;
+    height: 250px;
+    transition: 3s transform ease-in-out, 1s opacity linear, 2s background linear;
+    transition-delay: 0s, 6s, 0s;
+    transform: translate(1000px, -180px);
+}
+div.pc{
+    position: relative;
+    transform: rotate(14.5deg);
+    transition: 3s;
+    right: -830px;
+    bottom: 145px;
+    width: 280px;
+    height: 120px;
+    background-color: rgba(176, 218, 233, 0.2);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 25px;
+    opacity: 0;
+    z-index: -1;
+}
+div.pc:hover{
+    transform: scale(1.5);
+    display: inline-block;
+}
+label.pc{
+    display: inline-block;
+    background-color: rgba(147, 174, 209, 0.7);
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 15px;
+    margin: auto;
+}
+label.pc:hover{
+    background-color: lightskyblue;
+    color: white;
+}
+div.bgboom{
+    position: absolute;
+    top: 0px;
+    width: 1294px;
+    height: 714px;
+    z-index: -1;
+    transition: 10s z-index cubic-bezier(0,-1.97, 0.8, 1.1);
+    transition-delay: 4.9s;
+    background-image: url(img/zemetreseni.gif);
+    background-size: cover;
+    overflow: hidden;
+}
+/* GAME INPUT - DEFAULT */ 
+input{
+    opacity: 0;
+}
+input#default:checked ~ label.room{
+    z-index: -2;
+}
+input#default:checked ~ img#bars{
+    top: -1%;
+    opacity: 0;
+}
+input#default:checked ~ label.start{
+    z-index: 1;
+    opacity: 1;
+}
+input#default:checked ~ div.player{
+    opacity: 0;
+}
+input#default1:checked ~ label.room1middle,
+input#default1:checked ~ label.room1bed{
+    opacity: 0;
+}
+input#default1:checked ~ p.introom1{
+    opacity: 1;
+    z-index: 1;
+}
+input#default1:checked ~ div.player{
+    transform: translate(50px, 400px);
+    opacity: 0;
+}
+/* GAME INPUT - MENU */ 
+input.menu{
+    margin-left: 80px;
+}
+input#start:checked ~ img#bars{
+    top: -1%;
+    opacity: 0;
+}
+input#start:checked ~ div.player{
+    transform: translate(650px, 150px);
+}
+input#start:checked ~ p.start{
+    z-index: 1;
+    opacity: 1;
+}
+input#end:checked ~ div.player{
+    transform: translate(700px, 100px);
+    opacity: 0;
+}
+input#end:checked ~ div#gameover{
+    z-index: 10;
+    opacity: 1;
+}
+input#end:checked  ~ img#bars{
+    top: -1%;
+    opacity: 0;
+}
+/* GAME INPUT - ROOM START */ 
+input#table:checked ~ div.player{
+    transform: translate(450px, 300px);
+}
+input#table:checked ~ label.table::before{
+    transform: scale(1.3);
+}
+input#table:checked ~ a.board,
+input#table:checked ~ p.table,
+input#table:checked ~ label.gun{
+    z-index: 1;
+    opacity: 1;
+}
+input#door1:checked ~ div.player{
+    transform: translate(770px, 200px);
+}
+input#door1:checked ~ label.door1::before{
+    transform: scale(1.3);
+}
+input#door1:checked ~ a.door1{
+    z-index: 1;
+    opacity: 1;
+}
+input#door1:checked ~ a.door1gun{
+    opacity: 1;
+}
+input#door2:checked ~ div.player{
+    transform: translate(850px, 350px);
+}
+input#door2:checked ~ label.door2::before{
+    transform: scale(1.3);
+}
+input#door2:checked ~ p.door2,
+input#door2:checked ~ a.door2{
+    z-index: 1;
+    opacity: 1;
+}
+/* GAME INPUT - ROOM ROOM1 */ 
+input#room1exit:checked ~ div.player{
+    transform: translate(225px, 370px);
+    opacity: 1;
+}
+input#room1exit:checked ~ label.room1exit::before{
+    transform: scale(1.3);
+}
+input#room1exit:checked ~ a.room1{
+    opacity: 1;
+    z-index: 1;
+}
+input#room1exit:checked ~ label.room1bed {
+    opacity: 0;
+}
+input#room1middle:checked ~ div.player,
+input#room1middleb:checked ~ div.player{
+    transform: translate(575px, 440px);
+    opacity: 1;
+}
+input#room1middle:checked ~ label.room1middle::before,
+input#room1middleb:checked ~ label.room1middle::before{
+    transform: scale(1.3);
+}
+input#room1middle:checked ~ p.badguy{
+    opacity: 1;
+    z-index: 1;
+}
+input#room1middleb:checked ~ div.badguy{
+    background: url(img/badguy2.png);
+    background-size: cover;
+    top: 100px;
+}
+input#room1middleb:checked ~ p.boli,
+input#room1middleb:checked ~ label.shot,
+input#room1middleb:checked ~ label.utec{
+    opacity: 1;
+    z-index: 1;
+}
+input#room1bed:checked ~ div.player{
+    transform: translate(850px, 350px);
+}
+input#room1bed:checked ~ label.room1bed::before{
+    transform: scale(1.3);
+}
+input#room1bed:checked ~ label.keys,
+input#room1bed:checked ~ p.haha{
+    opacity: 1;
+    z-index: 1;
+}
+/* GAME INPUT - ROOM ROOM2 */ 
+input#room2exit:checked ~ div.player{
+    transform: translate(270px, 210px);
+}
+input#room2exit:checked ~ label.room2exit::before{
+    transform: scale(1.3);
+}
+input#room2exit:checked ~ p.introom2,
+input#room2exit:checked ~ a.room2{
+    opacity: 1;
+    z-index: 1;
+}
+input#room2pc:checked ~ div.player{
+    transform: translate(435px, 440px);
+}
+input#room2pc:checked ~ label.room2pc::before{
+    transform: scale(1.3);
+}
+input#room2pc:checked ~ label.back{
+    opacity: 0;
+    z-index: -1;
+}
+input#room2pc:checked ~ p.pc,
+input#room2pc:checked ~ div.pc{
+    opacity: 1;
+    z-index: 1;
+}
+input#back:checked ~ div.player{
+    transform: translate(815px, 40px);
+    z-index: -2;
+}
+input#back:checked ~ label.back::before{
+    transform: scale(1.3);
+}
+input#back:checked ~ label.room2pc{
+    opacity: 0;
+    z-index: -1;
+}
+input#back:checked ~ div.tatka{
+    opacity: 0;
+}
+input#back:checked ~ div.bgboom{
+    background: url(img/zemetreseni.gif);
+    background-size: cover;
+    z-index: -10;
+}
+input#back:checked ~ img#bgnew,
+input#back:checked ~ div#gameoverboom{
+    z-index: 1;
+    opacity: 1;
+}
+input#back:checked ~ p.chyba{
+    z-index: -10;
+    opacity: 1;
+}
+/* GAME INPUT - ITEMS START */
+input#gun:checked ~ div.player{
+    background-image: url(img/playergun.png);
+    background-size: cover;
+}
+input#gun:checked ~ div.player:hover{
+    background-image: url(img/playergun1.gif);
+    background-size: cover;
+}
+input#gun:checked ~ label.gun,
+input#gun:checked ~ img#gun,
+input#gun:checked ~ p.table,
+input#gun:checked ~ a.door1{
+    z-index: -2;
+    opacity: 0;
+}
+input#gun:checked ~ a.door1gun{
+    z-index: 1;
+}
+/* GAME INPUT - ITEMS ROOM1 */
+input#shot:checked ~ div.bullet,
+input#shot:checked ~ div.bullet1,
+input#shot:checked ~ div.bullet2,
+input#shot:checked ~ div.bullet3,
+input#shot:checked ~ div.bullet4,
+input#shot:checked ~ div.bullet5,
+input#shot:checked ~ div.bullet6{
+    transform: translate(1030px, -100px);
+    opacity: 0;
+}
+input#shot:checked ~ label.shot,
+input#shot:checked ~ label.utec,
+input#shot:checked ~ p.boli{
+    opacity: 0;
+    z-index: -1;
+}
+input#shot:checked ~ div.badguy{
+    transform: rotate(90deg);
+    top: 250px;
+    left: 1000px;
+    background: url(img/badguy1.png);
+    background-size: cover;
+}
+input#shot:checked ~ img#gunfire{
+    opacity: 1;
+    z-index: -2;
+}
+input#shot:checked ~ label.room1bed{
+    opacity: 1;
+}
+input#shot:checked ~ img.keys{
+    opacity: 1;
+    transform: rotate(120deg);
+    left: 834px;
+    top: 50px;
+}
+input#shot:checked ~ img#bloodunder,
+input#shot:checked ~ img#stain1,
+input#shot:checked ~ img#stain2{
+    opacity: 0.8;
+}
+input#keys:checked ~ img.keys,
+input#keys:checked ~ label.keys,
+input#keys:checked ~ p.boli{
+    opacity: 0;
+    z-index: -2;
+}
+input#utec:checked ~ div.player{
+    transform: translate(305px, 440px);
+}
+input#utec:checked ~ div.badguy{
+    transform: translate(-800px,150px);
+    background: url(img/badguy.png);
+    background-size: cover;
+}
+input#utec:checked ~ label.koule,
+input#utec:checked ~ label.end{
+    opacity: 1;
+    z-index: 1;
+}
+input#utec:checked ~ label.room{
+    opacity: 0;
+    z-index: -2;
+}
+input#koule:checked ~ div.player{
+    background: url(img/playergun1.png);
+    background-size: cover;
+    transform: translate(210px, 370px);
+}
+input#koule:checked ~ div.badguy{
+    width: 96px;
+    height: 240px;
+    transform: translate(-800px,150px);
+    background: url(img/badguy3.gif);
+    background-size: cover;
+}
+input#koule:checked ~ label.keys1{
+    opacity: 1;
+    z-index: 1;
+}
+input#koule:checked ~ img.keys{
+    opacity: 1;
+    z-index: 1;
+    left: 100px;
+    top: 170px;
+    transform: rotate(120deg);
+}
+input#koule:checked ~ label.room,
+input#keys1:checked ~ img.keys,
+input#keys1:checked ~ label.keys1{
+    opacity: 0;
+    z-index: -1;
+}
+input#keys1:checked ~ a.room1koule{
+    opacity: 1;
+    z-index: 5;
+}
+input#keys1:checked ~ p.haha{
+    opacity: 1;
+    z-index: 5;
+    left: 150px;
+}
+/* GAME INPUT - ITEMS ROOM2 */
+input#code3:checked ~ p.pc1,
+input#code2:checked ~ p.pc1,
+input#code1:checked ~ p.pc1{
+    z-index: -10;
+    opacity: 1;
+}
+input#code1:checked ~ div.pc,
+input#code2:checked ~ div.pc,
+input#code3:checked ~ div.pc{
+    opacity: 0;
+    z-index: -2;
+}
+input#code1:checked ~ p.pc,
+input#code2:checked ~ p.pc,
+input#code3:checked ~ p.pc{
+    opacity: 0;
+    z-index: -2;
+}
+input#code1:checked ~ p.introom2,
+input#code2:checked ~ p.introom2,
+input#code3:checked ~ p.introom2{
+    opacity: 0;
+    z-index: -2;
+}
+input#code3:checked ~ label.good{
+    z-index: 3;
+}
+input#code3:checked ~ label.back{
+    z-index: -2;
+}
+input#code1:checked ~ label.back,
+input#code2:checked ~ label.back{
+    z-index: 1;
+    opacity: 1;
+}
+input#good:checked ~ div.player{
+    transform: translate(815px, 40px);
+}
+input#good:checked ~ label.good::before{
+    transform: scale(1.3);
+}
+input#good:checked ~ label.win{
+    opacity: 1;
+    z-index: 1;
+}
+input#win:checked ~ p.win,
+input#win:checked ~ p.win1,
+input#win:checked ~ label.ending{
+    opacity: 1;
+    z-index: 1;
+}
+input#win:checked ~ label.win{
+    opacity: 0;
+    z-index: -1;
+}
+input#win:checked ~ div.tatka{
+    background: url(img/tatka.png);
+    background-size: cover;
+    transform: translate(1050px, -100px);
+}
+input#win2:checked ~ label.ending,
+input#win2:checked ~ p.win,
+input#win2:checked ~ p.win1{
+    opacity: -1;
+    z-index: -1;
+}
+input#win2:checked ~ div.player,
+input#win2:checked ~ div.tatka{
+    transform: translate(50px,-50px);
+    opacity: 0;
+}
+input#win2:checked ~ div#win2{
+    opacity: 1;
+    z-index: 5;
+}

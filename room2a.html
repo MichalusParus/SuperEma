@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style\game.css">
+    <title>SUPEREMA DETEKTIV</title>
+</head>
+<body>
+    <div class="background">
+    <div class="header">
+       <h1>SUPEREMA DETEKTIV</h1>
+       <a href="start.html"><img src="style\img\restart.svg" alt="restart"></a> 
+    </div>
+    <div class="room2">
+        <input type="radio" name="menu" id="end" class="menu">
+        <label for="end" class="menu">Konec</label>
+        <input type="radio" name="menu" id="room2exit" class="room" checked>
+        <input type="radio" name="menu" id="room2pc" class="room">
+        <input type="radio" name="menu" id="back" class="room">
+        <input type="radio" name="menu" id="good">
+        <input type="radio" name="pc" id="code1">
+        <input type="radio" name="pc" id="code2">
+        <input type="radio" name="pc" id="code3">
+        <input type="checkbox" id="win">
+        <input type="checkbox" id="win2">
+        <label for="room2exit" class="room room2exit"></label>
+        <label for="room2pc" class="room room2pc"></label>
+        <label for="back" class="room back"></label>
+        <label for="good" class="room good"></label>
+        <label for="win" class="button win">Rozvaž taťku</label>
+        <label for="win2" class="button ending">Odejdi</label>
+        <div class="player" id="emagun"></div>
+        <div class="tatka"></div>
+        <div class="bgboom">
+            <img src="style\img\boom.gif" alt="boom" class="boom" id="b1">
+            <img src="style\img\boom.gif" alt="boom" class="boom" id="b2">
+            <img src="style\img\boom.gif" alt="boom" class="boom" id="b3">
+            <img src="style\img\boom.gif" alt="boom" class="boom" id="b4">
+            <img src="style\img\boom.gif" alt="boom" class="boom" id="b5">
+            <img src="style\img\boom.gif" alt="boom" class="boom" id="b6">
+            <img src="style\img\boom.gif" alt="boom" class="boom" id="b7">
+            <img src="style\img\boom.gif" alt="boom" class="boom" id="b8">
+            <img src="style\img\boom.gif" alt="boom" class="boom" id="b9">            
+        </div>
+        <div class="pc">
+            <span> Zrušení detonace ! Zadejte heslo:</span>
+            <label for="code1" class="pc">Žába</label>
+            <label for="code2" class="pc">Kanón</label>
+            <label for="code3" class="pc">Pavouk</label>
+        </div>
+        <p class="intro introom2">Pane bože, můj taťka může vybuchnout !!! Musím přijít na to, jak ho zachránit!!!</p>
+        <p class="intro pc">HMM!!! Copak to může být</p>
+        <p class="intro pc1">No nic, budu to muset risknout a zjistit, zda to mám dobře</p>
+        <p class="intro chyba">!!! O OU !!! </p>
+        <p class="intro win">Tys mě zachránila! Ty jsi úžasná! "Muck Muck" Děkuji ti. Dominik se úplně pomátl, nevím co to něho vjelo. Nemusela si ho ale zabíjet, kdo nás teď bude vozit?. Pojďme rychle odtud pryč, můžeš si za to koupit jenom 1 sliz.</p>
+        <p class="intro win1">No jo, že já tě vždy musím tahat z maléru.</p>
+        <img src="style\img\room2boom.jpeg" alt="boom" id="bgnew">
+        <a href="startc.html" class="button room2">Odejdi</a>
+        <div class="gameover" id="gameover"><br><h1>GAME OVER</h1><br><p>poseroutko, taťku unesli<p>počet bodů: 0/100</p></p></div>
+        <div class="gameover" id="gameoverboom"><br><h1>GAME OVER</h1><br><p>všichni jsou roztrháni na kusy</p><p>počet bodů: 0/100</p></div>
+        <div class="gameover" id="win2"><br><h1>Krvavé Vítěztví</h1><br><p>odvážně si zachránila taťku ale prolila si krev a zasela si semínko zla do své nevinné dušičky</p><p>počet bodů: 60/100</p></div>
+    </div>   
+</body>
+</html>

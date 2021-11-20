@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style\game.css">
+    <title>SUPEREMA DETEKTIV</title>
+</head>
+<body>
+    <div class="background">
+    <div class="header">
+       <h1>SUPEREMA DETEKTIV</h1>
+       <a href="start.html"><img src="style\img\restart.svg" alt="restart"></a> 
+    </div>
+    <div class="room1">
+        <input type="radio" name="menu" id="default1">
+        <input type="radio" name="menu" id="end" class="menu">
+        <label for="end" class="menu">Konec</label>
+        <input type="radio" name="menu" id="room1exit" class="room">
+        <input type="radio" name="menu" id="room1middleb" class="room">
+        <input type="radio" name="menu" id="room1bed" class="room">
+        <input type="radio" name="menu" id="koule" checked> 
+        <input type="checkbox" id="keys1" checked>  
+        <label for="room1exit" class="room room1exit"></label>
+        <label for="room1middleb" class="room room1middle"></label>
+        <label for="room1bed" class="room room1bed"></label>
+        <div class="player" id="emagun"></div>
+        <div class="badguy"></div>
+        <p class="intro haha">Jsem hrdá, že jsem tě nezastřelila, budeš předán spravedlnosti.</p>
+        <a href="startd.html" class="button room1koule">Odejdi</a>
+        <div class="gameover" id="gameover"><br><h1>GAME OVER</h1><br><p> Zlotřilý Dominik vyhrál. Tebe vyhodil a mě prodal :(</p><p>počet bodů: 0/100</p></div>
+    </div>
+</body>
+</html>

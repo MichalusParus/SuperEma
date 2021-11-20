@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style\game.css">
+    <title>SUPEREMA DETEKTIV</title>
+</head>
+<body>
+    <div class="background">
+    <div class="header">
+       <h1>SUPEREMA DETEKTIV</h1>
+       <a href="start.html"><img src="style\img\restart.svg" alt="restart"></a> 
+    </div>
+    <div class="room1">
+        <input type="radio" name="menu" id="default1" checked>
+        <input type="radio" name="menu" id="end" class="menu">
+        <label for="end" class="menu">Konec</label>
+        <input type="radio" name="menu" id="room1exit" class="room">
+        <input type="radio" name="menu" id="room1middle" class="room">
+        <input type="radio" name="menu" id="room1bed" class="room">
+        <label for="room1exit" class="room room1exit"></label>
+        <label for="room1middle" class="room room1middle"></label>
+        <label for="room1bed" class="room room1bed"></label>
+        <div class="player"></div>
+        <div class="badguy"></div>
+        <p class="intro introom1">Čichám, čichám holkostřídače, měla bych si dát pozor !!! Opatrně vejdu</p>
+        <p class="intro badguy">Tamhle se schovavá, jak bych se ho mohla zbavit?</p>
+        <a href="startb.html" class="button room1">Odejdi</a>
+        <div class="gameover" id="gameover"><br><h1>GAME OVER</h1><br><p>poseroutko, taťku unesli</p><p>počet bodů: 0/100</p></div>
+    </div>   
+</body>
+</html>
